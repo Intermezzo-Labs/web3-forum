@@ -40,18 +40,7 @@
               class="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg"
               type="submit"
             >
-              <svg
-                class="w-5 h-5"
-                fill="currentColor"
-                viewbox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  fill-rule="evenodd"
-                ></path>
-              </svg>
+              search
             </button>
           </div>
         </form>
@@ -80,10 +69,7 @@
       <nav
         class="items-center justify-center hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0"
       >
-        <a class="text-gray-900" href="">About</a>
-        <a class="text-gray-900" href="">Blog</a>
-        <a class="text-gray-900" href="">Projects</a>
-        <a class="text-gray-900" href="">Contact</a>
+        <nuxt-link class="text-gray-900" to="/">Forum</nuxt-link>
       </nav>
 
       <div class="items-center hidden space-x-4 lg:flex">
@@ -106,10 +92,9 @@
       <nav
         class="flex items-center justify-center p-4 overflow-x-auto text-sm font-medium"
       >
-        <a class="flex-shrink-0 pl-4 text-gray-900" href="">About</a>
-        <a class="flex-shrink-0 pl-4 text-gray-900" href="">Blog</a>
-        <a class="flex-shrink-0 pl-4 text-gray-900" href="">Projects</a>
-        <a class="flex-shrink-0 pl-4 text-gray-900" href="">Contact</a>
+        <nuxt-link class="flex-shrink-0 pl-4 text-gray-900" to="/"
+          >Forum</nuxt-link
+        >
       </nav>
     </div>
   </header>

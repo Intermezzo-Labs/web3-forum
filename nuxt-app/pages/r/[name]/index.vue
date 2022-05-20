@@ -1,13 +1,7 @@
 <template>
-  <div class="container mx-auto grid grid-cols-4 gap-8 py-8">
-    <main class="col-span-3">
-      <h1 class="text-2xl font-bold mb-8">{{ $route.params.name }}</h1>
-      <div class="grid gap-4">
-        <PostTeaser v-for="post in posts" :post="post" />
-      </div>
-    </main>
-    <aside>other suff</aside>
-  </div>
+  <AppMainGrid>
+    <ForumPost teaser v-for="post in posts" :post="post" />
+  </AppMainGrid>
 </template>
 
 <script lang="ts" setup>
