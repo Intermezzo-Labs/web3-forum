@@ -31,7 +31,7 @@
     </p>
   </article>
 
-  <article
+  <!-- <article
     class="relative px-6 pt-12 pb-6 bg-white border border-gray-100 rounded-lg shadow-sm"
   >
     <p class="text-sm font-medium text-gray-500">Profit</p>
@@ -61,5 +61,5 @@
 
       <span class="ml-1.5 text-xs font-medium"> 67.81% </span>
     </p>
-  </article>
+  </article> -->
 </template>
