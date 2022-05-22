@@ -40,7 +40,7 @@
               class="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg"
               type="submit"
             >
-              search
+              <AppIcon name="search" class="h-4 w-4" />
             </button>
           </div>
         </form>
@@ -73,18 +73,13 @@
       </nav>
 
       <div class="items-center hidden space-x-4 lg:flex">
-        <a
-          class="px-5 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg"
-          href=""
-        >
-          Log in
-        </a>
-        <a
-          class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
-          href=""
-        >
-          Sign up
-        </a>
+        <AppButton v-if="isLoggedIn" @click="logout"> Log out </AppButton>
+        <template v-else>
+          <AppButton @click="$router.push('/login')"> Log in </AppButton>
+          <AppButton @click="$router.push('/register')" is-outlined>
+            Register
+          </AppButton>
+        </template>
       </div>
     </div>
 
@@ -99,3 +94,12 @@
     </div>
   </header>
 </template>
+
+<script lang="ts" setup>
+import { storeToRefs } from "pinia";
+import { useUserStore } from "~~/store/user";
+
+const user = useUserStore();
+const { logout } = user;
+const { isLoggedIn } = storeToRefs(user);
+</script>

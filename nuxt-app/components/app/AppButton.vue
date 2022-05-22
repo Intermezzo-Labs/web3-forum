@@ -1,38 +1,30 @@
 <template>
-  <!-- Base -->
-  <a
-    class="inline-flex items-center px-8 py-3 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-    href="/download"
+  <button
+    class="inline-flex gap-2 justify-center items-center px-8 py-3 text-white border border-indigo-600 rounded active:text-indigo-500 focus:outline-none focus:ring"
+    :class="{
+      'text-white bg-indigo-600 hover:bg-transparent hover:text-indigo-600':
+        !isOutlined,
+      'text-indigo-600 hover:bg-indigo-600 hover:text-white': isOutlined,
+    }"
   >
     <span class="text-sm font-medium">
       <slot />
     </span>
-
-    <svg
-      class="w-5 h-5 ml-3"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M17 8l4 4m0 0l-4 4m4-4H3"
-      />
-    </svg>
-  </a>
-
-  <!-- Border -->
-
-  <!-- <a class="inline-flex items-center px-8 py-3 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring" href="/download">
-  <span class="text-sm font-medium">
-    Download
-  </span>
-
-  <svg class="w-5 h-5 ml-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-</a> -->
+    <AppIcon v-if="iconName" :name="iconName" class="h-5" />
+  </button>
 </template>
+
+<script lang="ts" setup>
+defineProps({
+  isOutlined: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+  iconName: {
+    type: String,
+    default: "",
+    required: false,
+  },
+});
+</script>

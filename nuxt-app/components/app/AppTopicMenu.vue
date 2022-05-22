@@ -18,12 +18,10 @@
 </template>
 
 <script lang="ts" setup>
-const {
-  data: subreddits,
-  pending,
-  error,
-  refresh,
-} = await useAsyncData("subreddits", () =>
-  $fetch("http://localhost:5000/subreddits")
-);
+import { storeToRefs } from "pinia";
+import { useSubredditStore } from "~~/store/subreddits";
+
+const subredditStore = useSubredditStore();
+await subredditStore.getSubreddits();
+const { subreddits } = storeToRefs(subredditStore);
 </script>

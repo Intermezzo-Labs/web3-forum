@@ -18,7 +18,7 @@
         <div class="flex flex-wrap justify-center gap-4 mt-8">
           <AppButton> Get Started</AppButton>
 
-          <AppButton> Learn More </AppButton>
+          <AppButton is-outlined> Learn More </AppButton>
         </div>
       </div>
     </div>
